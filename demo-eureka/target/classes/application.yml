@@ -1,0 +1,13 @@
+server:
+  port: 7000 #eureka的启动端口，可自定义
+spring:
+  application:
+    name: demo-eureka #eureka项目名称，可自定义
+
+eureka:
+  client:
+    register-with-eureka: false #是否注册到eureka服务中
+    fetch-registry: false #是否拉取其他的服务
+    service-url:
+      #在IDEA中运行时使用127.0.0.1，部署发布时，请修改为虚拟机宿主机的ip地址  192.168.6.136
+      defaultZone: http://192.168.6.136:${server.port}/eureka

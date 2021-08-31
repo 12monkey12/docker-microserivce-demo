@@ -1,0 +1,25 @@
+server:
+  port: 9002 #article启动端口
+spring:
+  application:
+    name: demo-article #article项目名称
+  datasource:
+    #在IDEA中运行时使用127.0.0.1，部署发布时，请修改为虚拟机宿主机的ip地址
+    #mysql是安装在docker容器里。详见：Centos7下安装Docker和Docker安装Mysql
+    url: jdbc:mysql://192.168.6.136:3306/docker?characterEncoding=UTF8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: false
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #在IDEA中运行时使用127.0.0.1，部署发布时，请修改为虚拟机宿主机的ip地址
+      defaultZone: http://192.168.6.136:7000/eureka
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,7 @@
+com\demo\article\controller\ArticleController.class
+com\demo\article\vo\Result.class
+com\demo\article\service\ArticleService.class
+com\demo\article\service\impl\ArticleServiceImpl.class
+com\demo\article\ArticleApplication.class
+com\demo\article\dao\ArticleDao.class
+com\demo\article\pojo\Article.class

@@ -1,0 +1,19 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: demo-zuul
+zuul:
+  routes: #配置路由
+    app: #路由名称，这是一个标识作用，只要是[a-z]可随意，没有什么影响
+      path: /myarticle/* #匹配以/myarticle路径开头的所有路径
+      serviceId: demo-article #只要符合path规则，则转发到demo-article微服务
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #在IDEA中运行时使用127.0.0.1，部署发布时，请修改为虚拟机宿主机的ip地址http://192.168.6.136/
+      defaultZone: http://192.168.6.136:7000/eureka
+  instance:
+    prefer-ip-address: true
